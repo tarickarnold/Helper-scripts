@@ -22,6 +22,3 @@ def close_app(app_name) -> None:
             app_pid.wait()
             terminator_logger.info(f"{app_name} was terminated.")
         else: terminator_logger.info(f"{app_name} was not found.")
-                
-if __name__ == "__main__":
-     close_app('chrome')
