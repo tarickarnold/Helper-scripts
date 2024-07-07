@@ -21,11 +21,3 @@ def take_screenshot() -> None:
     # Take the screenshot and save it to path
     pyautogui.screenshot(imageFilename=screenshot)
     screenshot_logger.info(f"{screenshot} taken for error reporting")
-
-def main() -> None:
-    config: any = config('config.toml')
-    botname: any = config['bot']['name']
-    take_screenshot()
-
-if __name__ == "__main__":
-    main()
