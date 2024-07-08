@@ -1,7 +1,7 @@
 [bot]
 name = ""
 environment = "dev"
-email = "arnoldt2009@gmail.com"
+email = ""
 
 [bot.urls]
 url = ""
