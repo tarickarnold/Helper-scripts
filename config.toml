@@ -4,7 +4,10 @@ environment = "dev"
 retry = 3
 
 [notifications]
-success_email = ""
+from_email = ""
+to_email = ""
+from_number = ""
+to_number = ""
 
 [urls]
 url = ""
