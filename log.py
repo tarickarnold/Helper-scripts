@@ -36,7 +36,7 @@ def main():
     try:
         1 / 0
     except ZeroDivisionError:
-        logger.exception("exception message")
+        log.exception("exception message")
 
 if __name__ == "__main__":
     main()
