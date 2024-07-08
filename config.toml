@@ -4,8 +4,6 @@ environment = "dev"
 retry = 3
 
 [emails]
-system_exception_email = ""
-business_exception_email = ""
 success_email = ""
 
 [urls]
