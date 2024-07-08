@@ -3,7 +3,7 @@ botname = ""
 environment = "dev"
 retry = 3
 
-[emails]
+[notifications]
 success_email = ""
 
 [urls]
