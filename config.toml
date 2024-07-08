@@ -1,0 +1,18 @@
+[bot]
+name = ""
+environment = "dev"
+email = ""
+
+[bot.urls]
+url = ""
+
+[server]
+host = ""
+port = ""
+ssl = ""
+
+[database]
+url = ""
+name = ""
+username = ""
+passsword = ""
