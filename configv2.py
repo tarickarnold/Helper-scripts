@@ -41,12 +41,3 @@ class Config:
         self.tonumber: str = self.config['notifications']['to_number']
         
         config_logger.info("Config file parsed")
-
-
-def main() -> None:
-    dir_name: str = os.path.dirname(p=__file__)
-    config_file: str = os.path.join(dir_name, "config.toml")
-    Config(config_file= config_file)
-
-if __name__=="__main__":
-    main()
