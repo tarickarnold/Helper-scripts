@@ -2,8 +2,6 @@ import logging
 import os
 import psutil
 
-terminator_logger = logging.getLogger(__name__)
-
 def close_app(app_name) -> None:
     # Get running apps process
     running_apps = psutil.process_iter(['pid', 'name'])
@@ -20,5 +18,5 @@ def close_app(app_name) -> None:
             app_pid = psutil.Process(pid)
             app_pid.terminate()
             app_pid.wait()
-            terminator_logger.info(f"{app_name} was terminated.")
-        else: terminator_logger.info(f"{app_name} was not found.")
+        else: 
+            pass
