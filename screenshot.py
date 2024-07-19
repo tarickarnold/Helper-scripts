@@ -1,9 +1,8 @@
 import datetime
-import logging
 import os
 import pyautogui
 
-screenshot_logger = logging.getLogger(__name__)
+
 
 def take_screenshot() -> None:
     # Get the current time
@@ -20,4 +19,4 @@ def take_screenshot() -> None:
 
     # Take the screenshot and save it to path
     pyautogui.screenshot(imageFilename=screenshot)
-    screenshot_logger.info(f"{screenshot} taken for error reporting")
+  
