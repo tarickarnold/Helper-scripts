@@ -26,6 +26,7 @@ def filter_maker(level):
     return filter
 
 def main():
+    # Main function just here for testing
     setup_logging()
     logging.basicConfig(level="INFO")
     log.debug("debug message", extra={"x": "hello"})
