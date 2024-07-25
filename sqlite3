@@ -6,11 +6,7 @@ class SQLite(object):
 
     def __init__(self, db_file_path) -> None:
         self.db_file_path = db_file_path
-        
-        if db_file_path is not None:
-            self.connection = sqlite3.connect(db_file_path)
-        else:
-            self.connection = sqlite3.connect(db_file_path)
+        self.connection = sqlite3.connect(db_file_path)
         self.cur = self.connection.cursor()
 
     def commit(self) -> None:
