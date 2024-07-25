@@ -2,16 +2,17 @@ import os
 import sqlite3
 from config import Config
 
-class Database(object):
+class SQLite(object):
 
     def __init__(self, db_file_path) -> None:
-        """Initialize db class variables"""
+        self.db_file_path = db_file_path
+        
         if db_file_path is not None:
             self.connection = sqlite3.connect(db_file_path)
         else:
-            self.connection = sqlite3.connect(self.db_file_path)
+            self.connection = sqlite3.connect(db_file_path)
         self.cur = self.connection.cursor()
-  
+
     def commit(self) -> None:
         self.connection.commit()
 
@@ -21,6 +22,9 @@ class Database(object):
 
     def __del__(self) -> None:
         self.connection.close()
+
+    def __enter__(self):
+        return self.connection.cursor()
         
     def execute_insert(self, data) -> None:
         self.cur.execute(data)
@@ -37,15 +41,3 @@ class Database(object):
         else:
             self.connection.commit()
         self.connection.close()
-
-def main():
-    dir_name: str = os.path.dirname(__file__)
-    config_file = os.path.join(dir_name, "config.toml")
-    config = Config(config_file)
-    config.parseConfigs()
-    db_name: str = config.botname
-    db_table_name: str = config.db_table_name
-    db_file_path: str = os.path.join(dir_name, db_name)
-
-if __name__ == "__main__":
-    main()
